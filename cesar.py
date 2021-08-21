@@ -1,9 +1,17 @@
 clave = input("ingrese clave: ")
-paso = int(input ("ingrese paso: "))
+while True:#controlo que se ingrese un valor valido
+    paso = int(input ("ingrese paso entre 1 y 25: "))
+    if paso < 25 and paso > 1:
+        break
+    print( "ha ingresado un valor invalido")
+
 code= " "
 listacesar= list(clave)
 for letra in listacesar:
-    if not letra.isalpha():
+    if not letra.isalpha():#quito espacios
+        if letra.isdigit():# si es numero lo agrego
+            code += letra
+            continue
         continue    
     #if letra == "z":
     #    code +=chr(ord("a") + (paso-1))
